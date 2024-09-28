@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: blue;
+        }
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Transaction Details</h1>
+<table>
+
+    <tr>
+        <th>Transaction ID</th>
+        <td th:text="${transaction.TransactionId}"></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td th:text="${#dates.format(transaction.date, 'dd-MM-yyyy')}"></td>
+    </tr>
+    <tr>
+        <th>Mode of Payment</th>
+        <td th:text="${transaction.Modeofpayment}"></td>
+    </tr>
+    <tr>
+        <th>BBPS Transaction ID</th>
+        <td th:text="${transaction.BbpsTranscationId}"></td>
+    </tr>
+    <tr>
+        <th>Operator ID</th>
+        <td th:text="${transaction.opId}"></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td th:text="${transaction.status}"></td>
+    </tr>
+    <tr>
+        <th>Connection No</th>
+        <td th:text="${transaction.connectionNo}"></td>
+    </tr>
+    <tr>
+        <th>Service</th>
+        <td th:text="${transaction.service}"></td>
+    </tr>
+    <tr>
+        <th>CCF</th>
+        <td th:text="${transaction.ccf}"></td>
+    </tr>
+    <tr>
+        <th>Amount</th>
+        <td th:text="${transaction.amount}"></td>
+    </tr>
+</table>
+<h1 th:text="${message}">message</h1>
+</body>
+</html>
